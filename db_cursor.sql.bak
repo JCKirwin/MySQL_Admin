@@ -19,7 +19,7 @@ BEGIN
     REPEAT
         FETCH appDBs INTO db_name;
         IF NOT done THEN
-            SET output = CONCAT(output, ' UNION ALL SELECT company, id AS ''company_id'', ''', db_name, ''' AS ''db'', @@hostname AS ''hostname'', @@port AS ''port'' FROM ', db_name, '.company' );    
+            SET output = CONCAT(output, ' UNION ALL SELECT company, id AS ''company_id'',SUBSTRING_INDEX(USER(), ''@'', -1) AS ''ip_address'',  ''', db_name, ''' AS ''db'', @@hostname AS ''hostname'', @@port AS ''port'' FROM ', db_name, '.company' );    
         END IF;
     UNTIL done END REPEAT;
     CLOSE appDBs;
@@ -31,4 +31,5 @@ END//
 DELIMITER ;
 CALL db_cursor();
 DROP PROCEDURE db_cursor;
+
  
