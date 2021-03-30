@@ -1,0 +1,38 @@
+SELECT * FROM information_schema.tables
+SELECT DISTINCT TABLE_SCHEMA FROM information_schema.tables
+
+SELECT DISTINCT TABLE_SCHEMA 
+FROM information_schema.tables 
+WHERE TABLE_TYPE = 'BASE TABLE'
+ORDER BY TABLE_NAME
+
+SELECT * 
+FROM information_schema.tables 
+WHERE TABLE_SCHEMA = 'ecash'
+AND TABLE_TYPE = 'BASE TABLE'
+ORDER BY TABLE_NAME
+
+
+
+
+SELECT * 
+FROM information_schema.tables 
+WHERE 
+ORDER BY TABLE_NAME
+
+
+SELECT * 
+FROM information_schema.tables 
+WHERE TABLE_SCHEMA = 'ecash'
+AND TABLE_TYPE = 'BASE TABLE'
+#AND TABLE_NAME LIKE 'ach%'
+ORDER BY TABLE_NAME
+
+
+SELECT TABLE_NAME 
+FROM information_schema.tables 
+WHERE TABLE_SCHEMA = 'ecash'
+AND TABLE_TYPE = 'BASE TABLE'
+#AND TABLE_NAME LIKE 'ach%'
+ORDER BY TABLE_NAME
+

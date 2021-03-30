@@ -1,0 +1,7 @@
+SELECT USER FROM mysql.user
+
+SELECT HOST, USER, PASSWORD FROM mysql.user;
+
+SELECT USER, Db, HOST FROM mysql.db;
+
+SHOW GRANTS FOR 'jkirwin'@'%';
